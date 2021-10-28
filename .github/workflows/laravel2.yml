@@ -14,8 +14,10 @@ jobs:
       with:
         php-version: '7.4.16'
     - uses: actions/checkout@v2
-    - name: Install Composer
+    - name: Download Composer
       run: php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    - name: Install Composer
+      run: composer install
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     
