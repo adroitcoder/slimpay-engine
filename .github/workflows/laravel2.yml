@@ -14,9 +14,11 @@ jobs:
       with:
         php-version: '7.4.16'
     - uses: actions/checkout@v2
+    - name: Install Composer
+      run: php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-
+    
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
