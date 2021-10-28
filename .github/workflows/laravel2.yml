@@ -16,11 +16,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Download Composer
       run: php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    -name: Set Composer Root 
+      run: export COMPOSER_HOME="$HOME/.config/composer";
     - name: Install Composer
       run: composer install
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
