@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return "dfdfdf";
+    return [
+        "status"=>true,
+        "message"=>"Forever here to serve you"
+    ];
 });
