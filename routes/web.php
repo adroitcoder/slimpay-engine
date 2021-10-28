@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return [
         "status"=>true,
-        "message"=>"Forever here to serve you"
+        "message"=>"Forever here to serve you."
     ];
 });
